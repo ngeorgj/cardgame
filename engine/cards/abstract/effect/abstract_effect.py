@@ -37,6 +37,8 @@ class AbstractEffect(Abstraction):
     activate_leaving_battlefield = False
     activate_on_graveyard = False
 
+    target = ''   # player/enemy
+
     def trigger(self, target_player):
         self.activate(target_player)
 

@@ -14,6 +14,6 @@ class AbstractHealingEffect(AbstractEffect):
 
     effect = 1
 
-    def activate(self, target_player):
-        target_player.life += self.effect
-        self.message(f'{target_player.name} healed {self.effect} points of hp.')
+    def activate(self):
+        self.target.life += self.effect
+        self.message(f'{self.target.name} healed {self.effect} points of hp.')

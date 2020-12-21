@@ -18,6 +18,6 @@ class AbstractManaEffect(AbstractEffect):
 
     effect = 1
 
-    def activate(self, target_player):
+    def activate(self):
         print(f"Card {self.name} triggered.")
-        target_player.mana_pool += self.effect
+        self.target.mana_pool += self.effect

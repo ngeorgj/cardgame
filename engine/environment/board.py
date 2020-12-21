@@ -5,6 +5,7 @@
 
 # imports
 import random
+
 from engine.errors import not_enough_players
 
 
@@ -23,8 +24,11 @@ class Board:
         return False
 
     def start_game(self):
+        for player in self.players:
+            player.deck.shuffle()
+            print(f"`{player.name}'s deck was shuffled.")
+
         start_player = random.randint(0, len(self.players) - 1)
-        self.players[start_player].playing = True
 
     def play(self):
         pass
@@ -32,5 +36,3 @@ class Board:
     def main(self):
         while not self.winner:
             self.play()
-
-

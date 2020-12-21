@@ -25,6 +25,9 @@ class Player:
 
     commander = []
 
+    hp = 20
+    armor = 0
+
     def check_active_curses(self):
         for effect in self.active_curses:
             effect.activate(self)
