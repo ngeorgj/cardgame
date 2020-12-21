@@ -4,12 +4,7 @@
 # 
 
 # imports
-from engine.cards.collection.mana.white import WhiteMana
-from engine.environment.player import Player
+from engine.cards import all_cards
 
-mana_branco = WhiteMana()
-player = Player()
-player.name = "Ana Vitória"
-player.hand.append(mana_branco)
-
-mana_branco.cast(player)
+for card in all_cards:
+    print(card())

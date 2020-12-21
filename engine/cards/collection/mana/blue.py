@@ -8,7 +8,8 @@ from engine.cards.abstract.card.abstract_mana import AbstractManaCard
 from engine.cards.abstract.effect.abstract_mana import AbstractManaEffect
 
 
-class BlackMana(AbstractManaCard):
+class BlueMana(AbstractManaCard):
 
-    color = 'Black'
+    color = 'Blue'
     effect = AbstractManaEffect()
+

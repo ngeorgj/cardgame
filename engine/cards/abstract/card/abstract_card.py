@@ -23,6 +23,7 @@ class AbstractCard(Abstraction):
     expansion: str = 'Genesis'
     card_type = ''
     color = ''
+    cost = 0
 
     effect: AbstractEffect = []
 
@@ -40,15 +41,24 @@ class AbstractCard(Abstraction):
         :param player:
         :return:
         """
-        print(f'\n[{player.name}] casts [{self.name}].\n\n  Card Description:\n  {self.description}\n')
-        if self.effect.activate_on_cast:
-            self.effect.trigger(player)
 
-        player.hand.remove(self)
-        player.battlefield.append(self)
+        if not self.player_have_mana(player):
+            return print("You don't have enough mana to cast spell.")
 
-        if self.effect.activate_on_battlefield:
-            self.effect.trigger(player)
+        else:  # If player has enough mana to cast the card.
+            self.pay_mana_cost(player)
+            print(f'\n[{player.name}] casts [{self.name}].\n\n  Card Description:\n  {self.description}\n')
+
+            if self.effect.activate_on_cast:
+                self.effect.trigger(player)
+
+            player.hand.remove(self)
+            player.battlefield.append(self)
+
+            if self.effect.activate_on_battlefield:
+                self.effect.trigger(player)
+
+            return 100
 
     def tap(self):
         self.is_tapped = True
@@ -59,3 +69,17 @@ class AbstractCard(Abstraction):
     def send_to_graveyard(self, player):
         player.deck.remove(self)
         player.graveyard.append(self)
+
+    def pay_mana_cost(self, card_owner):
+        card_owner.mana_pool -= self.cost
+
+    def player_have_mana(self, player):
+        if player.mana_pool >= self.cost:
+            return True
+        return False
+
+    def complete_cost(self):
+        return f'{self.cost} {self.color}'
+
+    def __repr__(self):
+        return f'card: {self.name}'

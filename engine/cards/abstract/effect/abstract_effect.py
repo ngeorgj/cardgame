@@ -9,7 +9,14 @@ from engine.cards.abstract.effect import EFFECTS, ACTIVATION_METHODS
 
 
 class AbstractEffect(Abstraction):
+    """
+    Abstraction of Card Effect.
 
+    on new instances:
+        > Add function 'activate' and expose the effect.
+
+    the activate() function will be used in trigger() function.
+    """
     _fx_type: str = EFFECTS['OVERWRITE']
     _trigger: str = ACTIVATION_METHODS['OVERWRITE']
 
@@ -19,7 +26,6 @@ class AbstractEffect(Abstraction):
     max_turns = 0
 
     activate_every_turn = False
-
     activate_on_cast = False
     activate_on_battlefield = False
     activate_on_beginning_phase = False

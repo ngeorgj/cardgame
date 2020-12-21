@@ -15,5 +15,6 @@ class AbstractManaCard(AbstractCard):
     def name(self):
         return f'{self.color} Mana'
 
-    def function(self):
-        pass
+    @property
+    def description(self):
+        return f'Adds {self.effect.effect} {self.card_type} to your mana pool.'
