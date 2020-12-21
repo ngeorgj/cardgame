@@ -89,8 +89,12 @@ def commanders(create_commanders=False):
 
         counter = 1
         for comm in all_commanders:
-            comm = comm()
-            commanders_cursor.execute(sql(counter, comm.name, comm.description, comm.color))
+            try:
+                comm = comm()
+                commanders_cursor.execute(sql(counter, comm.name, comm.description, comm.color))
+
+            except:
+                print(f'Error inserting {comm.name} into SQLITE db.')
 
         commit_and_close(commanders_connection)
 

@@ -13,3 +13,6 @@ class AbstractCommander(Abstraction):
 
     def action(self):
         """unique action"""
+
+    def __repr__(self):
+        return f'commander: {self.name}'

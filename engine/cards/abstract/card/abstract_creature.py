@@ -18,6 +18,7 @@ class AbstractCreature(AbstractCard):
     card_type = 'Creature'
 
     properties = []
+    markers = []
 
     @property
     def subtitle(self):

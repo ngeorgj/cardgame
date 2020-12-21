@@ -6,11 +6,10 @@
 # imports
 from abc import ABC
 
-from engine.environment.constants import Constants
 from engine.environment.log import Log
 
 
-class Abstraction(ABC, Log, Constants):
+class Abstraction(ABC, Log):
     """ Base Abstraction Parent Class"""
 
     name = ""

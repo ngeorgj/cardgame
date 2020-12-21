@@ -4,7 +4,12 @@
 # 
 
 # imports
-from engine.cards import all_cards
+from engine.cards import WhiteMana, BlackArchangel
+from engine.environment.deck import Deck
 
-for card in all_cards:
-    print(card())
+deck = Deck()
+deck.add_card(WhiteMana())
+deck.add_card(BlackArchangel())
+
+
+print(deck.separate_by_cost())

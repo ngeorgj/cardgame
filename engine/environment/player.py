@@ -4,16 +4,13 @@
 # 
 
 # imports
+from engine.environment.deck import Deck
 
 
 class Player:
 
     name = ''
-    deck = []
-
-    @property
-    def deck_size(self):
-        return len(self.deck)
+    deck: Deck = []
 
     hand = []
     battlefield = []
@@ -23,15 +20,21 @@ class Player:
     active_effects = []
     active_curses = []
 
-    commander = []
-
     hp = 20
     armor = 0
 
-    def check_active_curses(self):
+    def check_active_curses(self, game_phase):
+        # TODO: Implement game phase triggers
         for effect in self.active_curses:
             effect.activate(self)
 
-    def check_active_effects(self):
+    def check_active_effects(self, game_phase):
+        # TODO: Implement game phase triggers
         for effect in self.active_effects:
             effect.activate(self)
+
+    def draw_card(self):
+        top_deck_card = self.deck.cards[-1]
+        self.deck.cards.remove(top_deck_card)
+        self.hand.append(top_deck_card)
+

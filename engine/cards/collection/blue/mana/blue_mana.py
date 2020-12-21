@@ -6,10 +6,10 @@
 # imports
 from engine.cards.abstract.card.abstract_mana import AbstractManaCard
 from engine.cards.abstract.effect.abstract_mana import AbstractManaEffect
+from engine.cards.collection.colors import BlueCard
 
 
-class BlueMana(AbstractManaCard):
+class BlueMana(BlueCard, AbstractManaCard):
 
-    color = 'Blue'
     effect = AbstractManaEffect()
 

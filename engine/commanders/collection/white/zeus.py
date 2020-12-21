@@ -6,6 +6,7 @@
 # imports
 from engine.commanders.abstract.abstract_commander import AbstractCommander
 from engine.commanders.abstract.effect.recurrent_heal import RecurrentHealingEffect
+from engine.environment import WHITE
 
 
 class Zeus(AbstractCommander):
@@ -17,11 +18,11 @@ class Zeus(AbstractCommander):
 
     @property
     def color(self):
-        return self.WHITE
+        return WHITE
 
     @property
     def action_target(self):
-        return self.PLAYER
+        return PLAYER
 
     def action(self):
         pass

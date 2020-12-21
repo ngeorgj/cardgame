@@ -5,6 +5,3 @@
 
 # imports
 
-# CONSTANTS
-
-FLYING = 'flying'

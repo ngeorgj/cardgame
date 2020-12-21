@@ -66,13 +66,10 @@ class Phases:
 
     state = State()
 
-    def main_phase(self, player):
+    def beginning_phase(self, player):
         self.draw_card(player)
         self.can_cast_spells = True
         self.can_summon = True
         return self.can_summon, self.can_cast_spells
 
-    def draw_card(self, player):
-        top_deck_card = player.deck[0]
-        player.deck.remove(top_deck_card)
-        player.hand.append(top_deck_card)
+
