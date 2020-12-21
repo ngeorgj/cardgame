@@ -11,3 +11,5 @@ ENEMY = 'Enemy'
 WHITE = 'White'
 BLACK = 'Black'
 BLUE = 'Blue'
+
+MANA = 'Mana'

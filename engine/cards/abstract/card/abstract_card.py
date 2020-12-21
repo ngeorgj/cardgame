@@ -82,4 +82,4 @@ class AbstractCard(Abstraction):
         return f'{self.cost} {self.color}'
 
     def __repr__(self):
-        return f'card: {self.name}'
+        return f'{self.name}'

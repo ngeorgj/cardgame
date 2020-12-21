@@ -5,8 +5,8 @@
 
 # imports
 from engine.cards.abstract.card.abstract_creature import AbstractCreature
-from engine.cards.collection import FLYING
 from engine.cards.collection.colors import BlackCard
+from engine.cards.collection.properties import FLYING
 
 
 class BlackArchangel(BlackCard, AbstractCreature):

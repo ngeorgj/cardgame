@@ -3,4 +3,4 @@
 #    github@ngeorgj
 # 
 
-# imports
+FLYING = 'flying'

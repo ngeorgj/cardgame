@@ -7,4 +7,4 @@
 
 # CONSTANTS
 
-FLYING = 'flying'
+
