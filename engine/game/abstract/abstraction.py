@@ -5,7 +5,7 @@
 
 # imports
 from abc import ABC
-from engine.game.environment import Log
+from engine.game.environment.log import Log
 
 
 class Abstraction(ABC, Log):

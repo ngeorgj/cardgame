@@ -4,7 +4,7 @@
 # 
 
 # imports
-from engine.game.cards import all_cards
+from engine.game.cards.collection import all_cards
 
 for card in all_cards():
     card = card()

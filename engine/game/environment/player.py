@@ -5,7 +5,7 @@
 
 # imports
 from engine.game.environment import MANA
-from engine.game.environment import Deck
+from engine.game.environment.deck import Deck
 
 
 class Player:

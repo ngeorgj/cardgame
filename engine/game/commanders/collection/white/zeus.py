@@ -5,7 +5,7 @@
 
 # imports
 from engine.game.commanders.abstract.abstract_commander import AbstractCommander
-from engine.game.commanders import RecurrentHealingEffect
+from engine.game.commanders.abstract.effect.recurrent_heal import RecurrentHealingEffect
 from engine.game.environment import WHITE
 
 

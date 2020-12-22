@@ -4,7 +4,7 @@
 # 
 
 # imports
-from engine.game.commanders.collection import Zeus
+from engine.game.commanders.collection.white.zeus import Zeus
 
 all_commanders = [
     Zeus

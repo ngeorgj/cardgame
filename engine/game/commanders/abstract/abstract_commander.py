@@ -4,7 +4,7 @@
 # 
 
 # imports
-from engine.game.abstract import Abstraction
+from engine.game.abstract.abstraction import Abstraction
 
 
 class AbstractCommander(Abstraction):
