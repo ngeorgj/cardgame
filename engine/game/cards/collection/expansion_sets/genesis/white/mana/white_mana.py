@@ -4,9 +4,9 @@
 # 
 
 # imports
-from engine.game.abstract import AbstractManaCard
-from engine.game.abstract import WhiteCard
-from engine.game.cards import Genesis
+from engine.game.abstract.card.abstract_mana import AbstractManaCard
+from engine.game.abstract.card.card_color import WhiteCard
+from engine.game.cards.collection.expansion_sets.genesis.expansion_class import Genesis
 
 
 class WhiteMana(Genesis, WhiteCard, AbstractManaCard):

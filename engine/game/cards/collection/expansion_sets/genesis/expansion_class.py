@@ -10,4 +10,5 @@ class Genesis:
 
     expansion_details = 'The first cards are in this expansion. 2020 is the year of the COVID pandemic.'
 
-    card_creator = 'Ana Vitória Selista'
+    card_creator   = 'Ana Vitória Selista'
+    card_developer = 'Nivaldo Georg Junior'

@@ -7,7 +7,7 @@
 
 
 # Compiled
-from engine.game.cards import genesis_cards
+from engine.game.cards.collection.expansion_sets.genesis import genesis_cards
 
 
 def all_cards():

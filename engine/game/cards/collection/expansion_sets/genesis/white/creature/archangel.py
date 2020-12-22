@@ -4,11 +4,11 @@
 # 
 
 # imports
-from engine.game.abstract import AbstractCreature
-from engine.game.abstract import WhiteCard
+from engine.game.abstract.card.abstract_creature import AbstractCreature
+from engine.game.abstract.card.card_color import WhiteCard
 from engine.game.abstract.card.properties import FLYING
-from engine.game.abstract.effect import HealingEffect
-from engine.game.cards import Genesis
+from engine.game.abstract.effect.healing_effect import HealingEffect
+from engine.game.cards.collection.expansion_sets.genesis.expansion_class import Genesis
 
 
 class Archangel(Genesis, WhiteCard, AbstractCreature):
