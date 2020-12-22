@@ -1,7 +1,0 @@
-#
-# // Repositories
-#    github@ngeorgj
-# 
-
-# imports
-

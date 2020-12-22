@@ -4,9 +4,9 @@
 # 
 
 # GAME INFORMATION
-from engine.cards import all_cards
-from engine.commanders import all_commanders
-from engine.environment import WHITE, BLACK, BLUE
+from engine.game.cards import all_cards
+from engine.game.commanders import all_commanders
+from engine.game.environment import WHITE, BLACK, BLUE
 
 NAME: str = 'JAGUAR, THE GATHERING'
 

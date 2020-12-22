@@ -4,8 +4,8 @@
 # 
 
 # imports
-from engine.commanders import all_commanders
-from engine.cards import all_cards
+from engine.game.cards import all_cards
+from engine.game.commanders import all_commanders
 import sqlite3
 
 """
@@ -31,7 +31,7 @@ game_db = 'game'
 user_db = 'users'
 location = './files/'
 
-execute_all = False
+execute_all = True
 
 # CardsTable
 drop_cards_table = True
@@ -127,7 +127,7 @@ def cards():
         cards_cursor.execute(cards_table_sql)
 
     def create_all_cards():
-        for card in all_cards:
+        for card in all_cards():
             card = card()
             data = dict(name=card.name,
                         description=card.description,
