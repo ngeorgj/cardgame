@@ -5,13 +5,20 @@
 
 # imports
 from engine.game.environment import MANA
+from engine.game.environment.board import Board
 from engine.game.environment.deck import Deck
 
 
 class Player:
 
+    id = 0
+
     name = ''
+    nickname = ''
+
     deck: Deck = []
+
+    board: Board = []
 
     hand = []
     battlefield = []

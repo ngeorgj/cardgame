@@ -6,18 +6,22 @@
 # imports
 import random
 
-from engine.game.environment import Phases
-from engine.game.environment import Player
-from engine.errors import not_enough_players
+from engine.errors import CustomError
+from engine.game.environment.phases import Phases
 
 
 class Board(Phases):
-    now_playing: Player = ''
+
+    now_playing = ''
+
+    triggers = []
 
     def __init__(self, players: list):
         if len(players) not in [2, 4]:
-            not_enough_players()
+            CustomError.not_enough_players()
         self.players = players
+        for player in players:
+            player.board = self
 
     @property
     def winner(self):
