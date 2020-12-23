@@ -4,7 +4,7 @@
 # 
 
 # imports
-from engine.game.cards import all_cards
+from engine.game.cards.collection import all_cards
 from engine.game.commanders import all_commanders
 import sqlite3
 

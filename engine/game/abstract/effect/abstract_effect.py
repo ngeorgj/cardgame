@@ -48,6 +48,7 @@ class AbstractEffect(Abstraction):
 
     def trigger(self):
         self.activate()
+        self.triggered = True
 
     def __repr__(self):
         return self.name

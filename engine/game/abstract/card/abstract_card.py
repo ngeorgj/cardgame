@@ -21,7 +21,6 @@ class AbstractCard(Abstraction, EffectActivationHandler):
         - description
 
     """
-    expansion: str = ''
 
     card_type = ''
     cost = 0

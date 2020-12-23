@@ -9,7 +9,8 @@ import random
 
 
 class Deck:
-    name = ''
+
+    name = 'Deck Name::Overwrite'
     cards = []
 
     commander: AbstractCommander = []
@@ -22,6 +23,10 @@ class Deck:
 
     def shuffle(self):
         random.shuffle(self.cards)
+
+    def attrib_ownership_to_deck(self, owner):
+        for card in self.cards:
+            card.owner = owner
 
     @property
     def deck_size(self):
@@ -36,10 +41,10 @@ class Deck:
         dct = {}
         counter = 0
         for card in self.cards:
-            dct[f'C{card.cost}'] = []
+            dct[f'{card.cost}'] = []
 
         for card in self.cards:
-            dct[f"C{card.cost}"].append(card)
+            dct[f"{card.cost}"].append(card)
 
             counter += 1
 

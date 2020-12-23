@@ -54,9 +54,14 @@ class Player:
             if card.card_type == MANA:
                 card.tap()
 
-    def attrib_ownership_to_deck(self):
-        for card in self.deck.cards:
-            card.owner = self
-
     def turn(self, table):
         pass
+
+    def actions(self):
+        cards = self.hand
+        cards_dict = {}
+        counter = 1
+        for card in cards:
+            cards_dict[str(counter)] = card.name
+            counter += 1
+
