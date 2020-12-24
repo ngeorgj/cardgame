@@ -58,6 +58,7 @@ class Deck:
 
         return dct
 
+    @property
     def information(self):
         return f"Name:           {self.name} - {self.deck_size} cards.\n" \
                f"Color:          {self.cards[0].color}\n" \

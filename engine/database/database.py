@@ -111,8 +111,11 @@ def cards():
             id           integer        PRIMARY KEY AUTOINCREMENT,
             name         text                     UNIQUE NOT NULL,
             description  text                            NOT NULL,
+            explanation  text                            NOT NULL,
+            cost         text                            NOT NULL,
             color        text                            NOT NULL,
-            cost         text                            NOT NULL
+            expansion    text                            NOT NULL,
+            year         int                             NOT NULL
     
         )"""
 
@@ -121,7 +124,7 @@ def cards():
     cards_cursor = cards_connection.cursor()
 
     if drop_cards_table:
-        cards_cursor.execute(f'DROP TABLE {tablename};')
+        cards_cursor.execute(f'DROP TABLE IF EXISTS {tablename};')
 
     if create_cards_table:
         cards_cursor.execute(cards_table_sql)
@@ -131,8 +134,11 @@ def cards():
             card = card()
             data = dict(name=card.name,
                         description=card.description,
+                        explanation=card.explanation,
+                        cost=card.cost,
                         color=card.color,
-                        cost=card.cost)
+                        expansion=card.expansion,
+                        year=card.year)
 
             sql_insertion(cards_connection, tablename, data)
 
@@ -173,7 +179,7 @@ def commanders():
     commanders_cursor = commanders_connection.cursor()
 
     if drop_comms_table:
-        commanders_cursor.execute(f'DROP TABLE {tablename};')
+        commanders_cursor.execute(f'DROP TABLE IF EXISTS {tablename};')
 
     if create_comms_table:
         commanders_cursor.execute(comms_table_query)
@@ -224,7 +230,7 @@ def users():
     users_cursor = users_connection.cursor()
 
     if drop_users_table:
-        users_cursor.execute(f'DROP TABLE {tablename};')
+        users_cursor.execute(f'DROP TABLE IF EXISTS {tablename};')
 
     if create_users_table:
         users_cursor.execute(users_table_query)
