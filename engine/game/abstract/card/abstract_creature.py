@@ -21,9 +21,13 @@ class AbstractCreature(AbstractCard):
     properties = []
     markers = []
 
+    last_damage_taken = 0
+
     def attack(self, target):
 
-        if target.has_defense:
+        has_defense = len(target.defenders) > 0
+
+        if has_defense:
             defenders = target.defenders
 
             for creature in defenders:
@@ -48,23 +52,28 @@ class AbstractCreature(AbstractCard):
         if this_creature_dies:
             self.message(f'{self.name} dies during combat against {enemy_creature.name}.')
             self.send_to_graveyard_from_battlefield()
-            self.check_for_triggers_on_death()
+
+            self.check_for_triggers_on_death()                                                    # TRIGGER?
 
         else:
             self.toughness -= enemy_creature.damage
+            self.check_for_triggers_on_life_loss()                                                # TRIGGER?
+
             enemy_creature.toughness -= self.damage
+            enemy_creature.check_for_triggers_on_life_loss()                                      # TRIGGER?
 
         if enemy_creature_dies:
             self.message(f'{enemy_creature.name} dies during combat against {self.name}.')
+
             enemy_creature.send_to_graveyard_from_battlefield()
-            enemy_creature.check_for_triggers_on_death()
+            enemy_creature.check_for_triggers_on_death()                                          # TRIGGER?
 
         else:
             self.toughness -= enemy_creature.damage
-            self.check_for_triggers_on_life_loss()
+            self.check_for_triggers_on_life_loss()                                                # TRIGGER?
 
             enemy_creature.toughness -= self.damage
-            enemy_creature.check_for_triggers_on_life_loss()
+            enemy_creature.check_for_triggers_on_life_loss()                                      # TRIGGER?
 
     @property
     def information(self):

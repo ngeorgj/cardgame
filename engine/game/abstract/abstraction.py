@@ -15,3 +15,4 @@ class Abstraction(ABC, Log):
     explanation = ''
     flavor_text = ''
 
+

@@ -4,12 +4,15 @@
 # 
 
 # imports
+from engine.game.abstract.abstract_card_functions import AbstractCardFunctions
 from engine.game.environment import MANA
+from engine.game.environment.battlefield import Battlefield
 from engine.game.environment.board import Board
 from engine.game.environment.deck import Deck
+from engine.game.environment.graveyard import Graveyard
 
 
-class Player:
+class Player(Battlefield, Graveyard, AbstractCardFunctions):
 
     id = 0
 
@@ -21,7 +24,6 @@ class Player:
     board: Board = []
 
     hand = []
-    battlefield = []
 
     attackers = []
     defenders = []
@@ -71,4 +73,3 @@ class Player:
         for card in cards:
             cards_dict[str(counter)] = card.name
             counter += 1
-
