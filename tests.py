@@ -4,8 +4,8 @@
 # 
 
 # imports
-from engine.game.cards.collection.expansion_sets.genesis.blue.creature.old_tortoise import OldTortoise
+from engine.game.decks.blue.base_blue_deck import base_genesis_blue_deck
 
-trt = OldTortoise()
+blue = base_genesis_blue_deck()
 
-print(trt.card_developer)
+print(blue.card_list())
