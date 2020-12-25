@@ -78,7 +78,7 @@ class AbstractCreature(AbstractCard):
     @property
     def information(self):
         name = f'[{self.name}]'
-        subtitle = f' {self.subtitle:>{20-len(name)}}'
+        subtitle = f' {self.subtitle}'
         cost = f'{self.complete_cost}'
         stats = f'[{self.stats}]'
         properties = ''

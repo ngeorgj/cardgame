@@ -4,8 +4,8 @@
 # 
 
 # imports
-from engine.game.decks.blue.base_blue_deck import base_genesis_blue_deck
+from engine.game.cards.collection.expansion_sets.genesis.white.creature.leonidas import Leonidas
 
-blue = base_genesis_blue_deck()
+leo = Leonidas()
 
-print(blue.card_list())
+print(leo.information)
