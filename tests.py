@@ -4,8 +4,7 @@
 # 
 
 # imports
-from engine.game.cards.collection.expansion_sets.genesis.white.creature.leonidas import Leonidas
+from engine.game.cards.collection import all_cards
 
-leo = Leonidas()
-
-print(leo.information)
+for card in all_cards():
+    print(card.name)

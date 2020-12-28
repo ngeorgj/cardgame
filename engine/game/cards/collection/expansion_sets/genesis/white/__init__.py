@@ -4,6 +4,7 @@
 # 
 
 # imports
+from engine.game.cards.collection.expansion_sets.genesis.white.creature.arcane_taurus import ArcaneTaurus
 from engine.game.cards.collection.expansion_sets.genesis.white.creature.archangel import Archangel
 from engine.game.cards.collection.expansion_sets.genesis.white.creature.cerineia_doe import CerineiaDoe
 from engine.game.cards.collection.expansion_sets.genesis.white.creature.leonidas import Leonidas
@@ -13,5 +14,6 @@ genesis_whiteCards = [
     WhiteMana,
     Archangel,
     CerineiaDoe,
-    Leonidas
+    Leonidas,
+    ArcaneTaurus
 ]
